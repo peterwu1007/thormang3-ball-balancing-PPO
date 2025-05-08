@@ -21,7 +21,7 @@ sim2real_rl/
 ## Environment Overview (`ball_balance.py`)
 
 - **Platform:** NVIDIA Isaac Gym (Preview 4)
-- **Robot:** Upper-body humanoid (THORMANG3-based) with 7 DOFs
+- **Robot:** Upper-body humanoid (THORMANG3-based) with 4 DOFs
 - **Task:** Balance a 1.9 cm-radius ball on a tray mounted on the robot's hand
 - **Observation Space (15-D):**
   - DOF positions and velocities
@@ -99,4 +99,3 @@ See Isaac Gym license for redistribution terms.
 
 ---
 
-> Maintained by [@peterwu1007](https://github.com/peterwu1007)
