@@ -44,23 +44,6 @@ This project implements a deep reinforcement learning environment in Isaac Gym f
 
 ---
 
-## PPO Training Setup (`BallBalancePPO.yaml`)
-
-- **Network:** MLP [512, 256, 128], ELU activation
-- **Algorithm:** Clipped PPO (via `rl_games`)
-- **Key Hyperparameters:**
-  - `learning_rate`: 3e-4 with adaptive scheduler
-  - `entropy_coef`: 0.0
-  - `e_clip`: 0.2 (clipping range)
-  - `normalize_advantage`: True
-  - `minibatch_size`: 32768, `mini_epochs`: 8
-  - `clip_value`: True
-- **Extras:**
-  - GAE (λ = 0.95), γ = 0.99
-  - Value loss, KL penalty, adaptive LR
-  - Score checkpoint saving
-
----
 
 ## Environment
   - python=3.7
