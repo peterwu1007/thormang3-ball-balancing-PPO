@@ -20,7 +20,7 @@ class BallBalance(VecTask):
 
     def __init__(self, cfg, rl_device, sim_device, graphics_device_id, headless, virtual_screen_capture, force_render):
         self.obs_history = []
-        self.ball_pos_history = []  # 用來紀錄球的位置 (X, Y)
+        self.ball_pos_history = []  
         self.tray_pos_history = [] 
         self.REAL_BALL_pos_history = []
         self.cfg = cfg
@@ -237,12 +237,12 @@ class BallBalance(VecTask):
             ball_handle = self.gym.create_actor(env_ptr, ball_asset, ball_pose, "ball", i, 0, 0)
             self.obj_handles.append(ball_handle)
 
-            # # 獲取剛體形狀屬性
+
             # ball_shape_props = self.gym.get_actor_rigid_shape_properties(env_ptr,  ball_handle)
 
-            # # 設置摩擦係數
+          
             # for s in ball_shape_props:
-            #     s.friction = 0  # 設定球的摩擦係數
+            #     s.friction = 0  
             # self.gym.set_actor_rigid_shape_properties(env_ptr, ball_handle, ball_shape_props)
 
           
@@ -264,8 +264,7 @@ class BallBalance(VecTask):
         v_dof_indices = torch.tensor([0,1,2,3], device=self.device)
         #print(self.dof_states[:, actuated_dof_indices, :])
         
-        # 初始化紀錄觀測值的列表
-        
+
 
         self.obs_buf[..., 0:4] = self.dof_positions[...,[0,1,2,3]]
         # print(self.obs_buf[10, 0:7])
@@ -323,44 +322,7 @@ class BallBalance(VecTask):
 
         return self.obs_buf
     
-#     def compute_observations(self):#real to sim
-#     #     with open('/home/peter/isaacgym/python/examples/IsaacGymEnvs/isaacgymenvs/tasks/obs.csv', mode='r') as file:
-#     #         reader = csv.reader(file)
-            
-#     #         # 跳过表头
-#     #         next(reader)  # 跳过第一行
-#     #         for row in reader:
-#     #             # 加载数据
-#     #             static_obs = [float(value) for value in row]  # 读取第一行数据
-#     #             print("Loaded static_obs:", static_obs)
-    
-#     #     # 将 static_obs 用于你的逻辑
-#     #     if len(static_obs) != 18:
-#     #         raise ValueError(f"Observation length is {len(static_obs)}, expected 18.")
-#     #     self.obs_buf  = torch.tensor([static_obs]*self.num_envs, dtype=torch.float32, device=self.rl_device)
-#     #     self.ball_positions[:,[0,1]] = self.obs_buf[:,11:13]
-#     #     self.ball_linvels [:,[0,1]]= self.obs_buf[:,13:15]
-#     #     # print(self.ball_linvels)
-#     #     # print(self.ball_positions)
-#         static_obs = [
-#                     7.511279497907951e-05,-0.0001328286443513793,0.00010015039330543933,0.0002128195857740586,1.57,0.0,-0.3,0.0,0.0,0.0,0.0,-0.004545454545454545,-0.14759036144578314,0.0,0.0,0.0,0.0,0.0
 
-
-#   # 添加一个额外的值
-#                 ]
-
-#         # 确保静态观测值的长度为 18
-#         assert len(static_obs) == 18, "static_obs length must be 18"
-
-#         # 替换 self.obs_buf 的内容
-#         self.obs_buf = torch.tensor(
-#             [static_obs] * self.num_envs,      # 复制静态值 num_envs 次
-#             device=self.device,           # 保持与之前一致的设备
-#             dtype=torch.float32           # 明确指定数据类型
-# )
-      
-#         return self.obs_buf
-      
 
     def compute_reward(self):
 
