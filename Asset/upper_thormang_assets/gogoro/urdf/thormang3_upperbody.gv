@@ -1,0 +1,167 @@
+digraph G {
+node [shape=box];
+"torso_base_link" [label="torso_base_link"];
+"chest_link" [label="chest_link"];
+"head_y_link" [label="head_y_link"];
+"head_p_link" [label="head_p_link"];
+"cam_link" [label="cam_link"];
+"lidar_link" [label="lidar_link"];
+"realsense_link" [label="realsense_link"];
+"l_arm_sh_p1_link" [label="l_arm_sh_p1_link"];
+"l_arm_sh_r_link" [label="l_arm_sh_r_link"];
+"l_arm_sh_p2_link" [label="l_arm_sh_p2_link"];
+"l_arm_el_y_link" [label="l_arm_el_y_link"];
+"l_base:1" [label="l_base:1"];
+"l_forearm:1" [label="l_forearm:1"];
+"l_palm_axis:1" [label="l_palm_axis:1"];
+"l_palmL:1" [label="l_palmL:1"];
+"l_Index_Proximal" [label="l_Index_Proximal"];
+"l_Index_Middle" [label="l_Index_Middle"];
+"l_Index_Distal" [label="l_Index_Distal"];
+"l_Middle_Proximal" [label="l_Middle_Proximal"];
+"l_Middle_Middle" [label="l_Middle_Middle"];
+"l_Middle_Distal" [label="l_Middle_Distal"];
+"l_Ring_Proximal" [label="l_Ring_Proximal"];
+"l_Ring_Middle" [label="l_Ring_Middle"];
+"l_Ring_Distal" [label="l_Ring_Distal"];
+"l_Small_Proximal" [label="l_Small_Proximal"];
+"l_Small_Middle" [label="l_Small_Middle"];
+"l_Small_Distal" [label="l_Small_Distal"];
+"l_Thumb_axis" [label="l_Thumb_axis"];
+"l_Thumb_Methacarpal" [label="l_Thumb_Methacarpal"];
+"l_Thumb_Proximal" [label="l_Thumb_Proximal"];
+"l_Thumb_Distal" [label="l_Thumb_Distal"];
+"r_arm_sh_p1_link" [label="r_arm_sh_p1_link"];
+"r_arm_sh_r_link" [label="r_arm_sh_r_link"];
+"r_arm_sh_p2_link" [label="r_arm_sh_p2_link"];
+"r_arm_el_y_link" [label="r_arm_el_y_link"];
+"base:1" [label="base:1"];
+"forearm:1" [label="forearm:1"];
+"palm_axis:1" [label="palm_axis:1"];
+"palm" [label="palm"];
+"Index_Proximal" [label="Index_Proximal"];
+"Index_Middle" [label="Index_Middle"];
+"Index_Distal" [label="Index_Distal"];
+"Middle_Proximal" [label="Middle_Proximal"];
+"Middle_Middle" [label="Middle_Middle"];
+"Middle_Distal" [label="Middle_Distal"];
+"Ring_Proximal" [label="Ring_Proximal"];
+"Ring_Middle" [label="Ring_Middle"];
+"Ring_Distal" [label="Ring_Distal"];
+"Small_Proximal" [label="Small_Proximal"];
+"Small_Middle" [label="Small_Middle"];
+"Small_Distal" [label="Small_Distal"];
+"Thumb_axis" [label="Thumb_axis"];
+"Thumb_Methacarpal" [label="Thumb_Methacarpal"];
+"Thumb_Proximal" [label="Thumb_Proximal"];
+"Thumb_Distal" [label="Thumb_Distal"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"torso_base_link" -> "torso_y" [label="xyz: 0 0 0.1705 \nrpy: 0 -0 0"]
+"torso_y" -> "chest_link"
+"chest_link" -> "head_y" [label="xyz: 0 0 0.229 \nrpy: 0 -0 0"]
+"head_y" -> "head_y_link"
+"head_y_link" -> "head_p" [label="xyz: 0 -0.045 0.039 \nrpy: 0 -0 0"]
+"head_p" -> "head_p_link"
+"head_p_link" -> "cam" [label="xyz: 0.0682 0.045 0.056 \nrpy: 0 -0 0"]
+"cam" -> "cam_link"
+"head_p_link" -> "lidar_fixed" [label="xyz: 0 0.045 0.10675 \nrpy: 0 -0 0"]
+"lidar_fixed" -> "lidar_link"
+"head_p_link" -> "realsense_fixed" [label="xyz: 0.0529 -0.009 0.0292 \nrpy: 0 -0 0"]
+"realsense_fixed" -> "realsense_link"
+"chest_link" -> "l_arm_sh_p1" [label="xyz: 0 0.152 0.16 \nrpy: 0 -0 0"]
+"l_arm_sh_p1" -> "l_arm_sh_p1_link"
+"l_arm_sh_p1_link" -> "l_arm_sh_r" [label="xyz: 0.057 0.06 -0.039 \nrpy: 0 -0 0"]
+"l_arm_sh_r" -> "l_arm_sh_r_link"
+"l_arm_sh_r_link" -> "l_arm_sh_p2" [label="xyz: -0.057 0.033 0 \nrpy: 0 -0 0"]
+"l_arm_sh_p2" -> "l_arm_sh_p2_link"
+"l_arm_sh_p2_link" -> "l_arm_el_y" [label="xyz: 0.03 0.187 0.057 \nrpy: 0 -0 0"]
+"l_arm_el_y" -> "l_arm_el_y_link"
+"l_arm_el_y_link" -> "left_base_fix" [label="xyz: 0.171 0.03 -0.057 \nrpy: 0 1.55 0"]
+"left_base_fix" -> "l_base:1"
+"l_base:1" -> "l_forearm:1--base:1" [label="xyz: 0 0 0.001 \nrpy: -1.5708 -1.26218e-29 -3.14159"]
+"l_forearm:1--base:1" -> "l_forearm:1"
+"l_forearm:1" -> "l_palm_axis:1--forearm:1" [label="xyz: 0 -0.165 -0.01275 \nrpy: 0 -0 0"]
+"l_palm_axis:1--forearm:1" -> "l_palm_axis:1"
+"l_palm_axis:1" -> "l_palmL:1--palm_axis:1" [label="xyz: -0.0265 0 0.0125 \nrpy: -3.14159 -0 -3.14159"]
+"l_palmL:1--palm_axis:1" -> "l_palmL:1"
+"l_palmL:1" -> "l_Index_Proximal--palmL:1" [label="xyz: 0.015314 -0.080697 0.00509984 \nrpy: -1.76216 -0.155855 0.117563"]
+"l_Index_Proximal--palmL:1" -> "l_Index_Proximal"
+"l_Index_Proximal" -> "l_Index_Middle--Index_Proximal" [label="xyz: 6.24408e-05 0 -0.0258753 \nrpy: 0 -0 0"]
+"l_Index_Middle--Index_Proximal" -> "l_Index_Middle"
+"l_Index_Middle" -> "l_Index_Distal--Index_Middle" [label="xyz: 6.25784e-05 -2.11835e-07 -0.0258743 \nrpy: 0 -0 0"]
+"l_Index_Distal--Index_Middle" -> "l_Index_Distal"
+"l_palmL:1" -> "l_Middle_Proximal--palmL:1" [label="xyz: -0.0095654 -0.082818 0.00164059 \nrpy: -1.74598 -0.0859374 0.015191"]
+"l_Middle_Proximal--palmL:1" -> "l_Middle_Proximal"
+"l_Middle_Proximal" -> "l_Middle_Middle--Middle_Proximal" [label="xyz: 6.25377e-05 0 -0.025875 \nrpy: 0 -0 0"]
+"l_Middle_Middle--Middle_Proximal" -> "l_Middle_Middle"
+"l_Middle_Middle" -> "l_Middle_Distal--Middle_Middle" [label="xyz: 6.24372e-05 0 -0.025875 \nrpy: 0 -0 0"]
+"l_Middle_Distal--Middle_Middle" -> "l_Middle_Distal"
+"l_palmL:1" -> "l_Ring_Proximal--palmL:1" [label="xyz: -0.034442 -0.082386 0.00076556 \nrpy: -1.75269 0.068636 -0.101002"]
+"l_Ring_Proximal--palmL:1" -> "l_Ring_Proximal"
+"l_Ring_Proximal" -> "l_Ring_Middle--Ring_Proximal" [label="xyz: 6.25091e-05 0 -0.0258749 \nrpy: 0 -0 0"]
+"l_Ring_Middle--Ring_Proximal" -> "l_Ring_Middle"
+"l_Ring_Middle" -> "l_Ring_Distal--Ring_Middle" [label="xyz: 6.25316e-05 1.76553e-07 -0.0258759 \nrpy: 0 -0 0"]
+"l_Ring_Distal--Ring_Middle" -> "l_Ring_Distal"
+"l_palmL:1" -> "l_Small_Proximal--palmL:1" [label="xyz: -0.0591609 -0.07417 0.00246184 \nrpy: -1.77486 0.138702 -0.204065"]
+"l_Small_Proximal--palmL:1" -> "l_Small_Proximal"
+"l_Small_Proximal" -> "l_Small_Middle--Small_Proximal" [label="xyz: 6.25112e-05 0 -0.0258752 \nrpy: 0 -0 0"]
+"l_Small_Middle--Small_Proximal" -> "l_Small_Middle"
+"l_Small_Middle" -> "l_Small_Distal--Small_Middle" [label="xyz: 6.26027e-05 0 -0.0258752 \nrpy: 0 -0 0"]
+"l_Small_Distal--Small_Middle" -> "l_Small_Distal"
+"l_palmL:1" -> "l_Thumb_axis--palmL:1" [label="xyz: -0.0078751 -0.035115 0.00101669 \nrpy: -1.5708 -1.2673 -1.81211"]
+"l_Thumb_axis--palmL:1" -> "l_Thumb_axis"
+"l_Thumb_axis" -> "l_Thumb_Methacarpal--Thumb_axis" [label="xyz: -0.005125 -0.0143548 0.0211784 \nrpy: -3.14159 -0 0"]
+"l_Thumb_Methacarpal--Thumb_axis" -> "l_Thumb_Methacarpal"
+"l_Thumb_Methacarpal" -> "l_Thumb_Proximal--Thumb_Methacarpal" [label="xyz: -0.000562286 -6.82919e-07 -0.0215861 \nrpy: 0 -0 0"]
+"l_Thumb_Proximal--Thumb_Methacarpal" -> "l_Thumb_Proximal"
+"l_Thumb_Proximal" -> "l_Thumb_Distal--Thumb_Proximal" [label="xyz: -6.26115e-05 3.61581e-07 -0.021586 \nrpy: 0 -0 0"]
+"l_Thumb_Distal--Thumb_Proximal" -> "l_Thumb_Distal"
+"chest_link" -> "r_arm_sh_p1" [label="xyz: 0 -0.152 0.16 \nrpy: 0 -0 0"]
+"r_arm_sh_p1" -> "r_arm_sh_p1_link"
+"r_arm_sh_p1_link" -> "r_arm_sh_r" [label="xyz: 0.057 -0.06 -0.039 \nrpy: 0 -0 0"]
+"r_arm_sh_r" -> "r_arm_sh_r_link"
+"r_arm_sh_r_link" -> "r_arm_sh_p2" [label="xyz: -0.057 -0.033 0 \nrpy: 0 -0 0"]
+"r_arm_sh_p2" -> "r_arm_sh_p2_link"
+"r_arm_sh_p2_link" -> "r_arm_el_y" [label="xyz: 0.03 -0.187 0.057 \nrpy: 0 -0 0"]
+"r_arm_el_y" -> "r_arm_el_y_link"
+"r_arm_el_y_link" -> "base_fix" [label="xyz: 0.171 -0.03 -0.057 \nrpy: 0 1.55 0"]
+"base_fix" -> "base:1"
+"base:1" -> "forearm:1--base:1" [label="xyz: 0 0 0.001 \nrpy: -1.5708 -1.26218e-29 -3.14159"]
+"forearm:1--base:1" -> "forearm:1"
+"forearm:1" -> "palm_axis:1--forearm:1" [label="xyz: 0 -0.165 -0.01275 \nrpy: 0 -0 0"]
+"palm_axis:1--forearm:1" -> "palm_axis:1"
+"palm_axis:1" -> "palm--palm_axis:1" [label="xyz: 0.0265 0 0.0125 \nrpy: 1.37943 0.155855 -0.117563"]
+"palm--palm_axis:1" -> "palm"
+"palm" -> "Index_Proximal--palm" [label="xyz: -0.0482113 -0.0207166 0.0857786 \nrpy: -3.14159 -0 0"]
+"Index_Proximal--palm" -> "Index_Proximal"
+"Index_Proximal" -> "Index_Middle--Index_Proximal" [label="xyz: 6.24645e-05 0 -0.0258748 \nrpy: 0 -0 0"]
+"Index_Middle--Index_Proximal" -> "Index_Middle"
+"Index_Middle" -> "Index_Distal--Index_Middle" [label="xyz: 6.2463e-05 0 -0.0258748 \nrpy: 0 -0 0"]
+"Index_Distal--Index_Middle" -> "Index_Distal"
+"palm" -> "Middle_Proximal--palm" [label="xyz: -0.0230982 -0.0192207 0.084179 \nrpy: -3.13397 0.0869338 0.0875981"]
+"Middle_Proximal--palm" -> "Middle_Proximal"
+"Middle_Proximal" -> "Middle_Middle--Middle_Proximal" [label="xyz: 6.24843e-05 -1.52847e-07 -0.0258742 \nrpy: 0 -0 0"]
+"Middle_Middle--Middle_Proximal" -> "Middle_Middle"
+"Middle_Middle" -> "Middle_Distal--Middle_Middle" [label="xyz: 6.24995e-05 0 -0.0258752 \nrpy: 0 -0 0"]
+"Middle_Distal--Middle_Middle" -> "Middle_Distal"
+"palm" -> "Ring_Proximal--palm" [label="xyz: 0.000973217 -0.0139442 0.0805959 \nrpy: -3.11901 0.171571 0.262907"]
+"Ring_Proximal--palm" -> "Ring_Proximal"
+"Ring_Proximal" -> "Ring_Middle--Ring_Proximal" [label="xyz: 6.24428e-05 0 -0.0258755 \nrpy: 0 -0 0"]
+"Ring_Middle--Ring_Proximal" -> "Ring_Middle"
+"Ring_Middle" -> "Ring_Distal--Ring_Middle" [label="xyz: 6.25413e-05 0 -0.0258745 \nrpy: 0 -0 0"]
+"Ring_Distal--Ring_Middle" -> "Ring_Distal"
+"palm" -> "Small_Proximal--palm" [label="xyz: 0.0235505 -0.00577399 0.0699045 \nrpy: -3.11077 0.256445 0.355662"]
+"Small_Proximal--palm" -> "Small_Proximal"
+"Small_Proximal" -> "Small_Middle--Small_Proximal" [label="xyz: 6.24423e-05 0 -0.0258752 \nrpy: 0 -0 0"]
+"Small_Middle--Small_Proximal" -> "Small_Middle"
+"Small_Middle" -> "Small_Distal--Small_Middle" [label="xyz: 6.2445e-05 0 -0.0258753 \nrpy: 0 -0 0"]
+"Small_Distal--Small_Middle" -> "Small_Distal"
+"palm" -> "Thumb_axis--palm" [label="xyz: -0.0403593 -0.0128548 0.0384218 \nrpy: 1.20617 0.474749 -1.52081"]
+"Thumb_axis--palm" -> "Thumb_axis"
+"Thumb_axis" -> "Thumb_Methacarpal--Thumb_axis" [label="xyz: -0.00512514 -0.0143543 0.0211784 \nrpy: 3.14159 0 0"]
+"Thumb_Methacarpal--Thumb_axis" -> "Thumb_Methacarpal"
+"Thumb_Methacarpal" -> "Thumb_Proximal--Thumb_Methacarpal" [label="xyz: -0.000562562 -2.35897e-07 -0.0215861 \nrpy: 0 -0 0"]
+"Thumb_Proximal--Thumb_Methacarpal" -> "Thumb_Proximal"
+"Thumb_Proximal" -> "Thumb_Distal--Thumb_Proximal" [label="xyz: -6.23674e-05 6.16563e-07 -0.0215858 \nrpy: 0 -0 0"]
+"Thumb_Distal--Thumb_Proximal" -> "Thumb_Distal"
+}
