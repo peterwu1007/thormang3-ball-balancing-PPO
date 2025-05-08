@@ -10,7 +10,7 @@ This project implements a deep reinforcement learning environment in Isaac Gym f
 ##  Project Structure
 
 ```
-sim2real_rl/
+
 ├── ball_balance.py            # Isaac Gym VecTask environment definition
 ├── BallBalance.yaml           # Environment and simulation parameters (gym config)
 ├── BallBalancePPO.yaml        # PPO hyperparameter configuration (rl_games format)
